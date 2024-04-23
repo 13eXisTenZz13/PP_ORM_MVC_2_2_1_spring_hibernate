@@ -8,9 +8,11 @@ import java.util.List;
 public interface UserService {
     void add(User user);
 
-    public void getUserAndCarByCarId();
+    User getUserAndCarByCarId(String model, int series);
 
     List<User> listUsers();
 
     List<Car> listCar();
+
+
 }

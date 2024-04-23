@@ -12,14 +12,13 @@ public class Car {
     private String model;
     @Column(name = "series")
     private int series;
-    @OneToOne(mappedBy = "userCar")
-    private User carUser;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "car")
+    private User user;
 
     public Car() {
     }
 
     public Car(String model, int series) {
-        this.id = id;
         this.model = model;
         this.series = series;
     }
@@ -48,12 +47,12 @@ public class Car {
         this.series = series;
     }
 
-    public User getCarUser() {
-        return carUser;
+    public User getUser() {
+        return user;
     }
 
-    public void setCarUser(User carUser) {
-        this.carUser = carUser;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
